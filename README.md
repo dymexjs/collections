@@ -2,6 +2,7 @@
 
 Dymexjs stands for DYnamic, Modular, EXtensible JavaScript/Typescript framework.
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/c427e48cd4554c99b62af9daa03dcc27)](https://app.codacy.com/gh/dymexjs/collections?utm_source=github.com&utm_medium=referral&utm_content=dymexjs/collections&utm_campaign=Badge_Grade)
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](code_of_conduct.md)
 
 A collection of data structures for JavaScript
