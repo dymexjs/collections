@@ -1,0 +1,11 @@
+{
+  "projectName": "di",
+  "projectOwner": "dymexjs",
+  "files": ["README.md"],
+  "imageSize": 50,
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "commitType": "docs",
+  "commitConvention": "angular",
+  "contributorsPerLine": 7
+}
