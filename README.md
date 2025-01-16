@@ -69,7 +69,3 @@ Licensed under the [MIT License](./LICENSE).
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
-
-[all-contributors-badge]: <https://img.shields.io/github/all-contributors/{OWNER}/{REPO}?color=orange&style=flat-square>
-[coc]: <./CODE_OF_CONDUCT.md>
-[coc-badge]: <https://img.shields.io/badge/code%20of-conduct-ff69b4.svg?style=flat-square>
