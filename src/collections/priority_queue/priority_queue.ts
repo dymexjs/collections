@@ -20,6 +20,15 @@ export class PriorityQueue<TElement, TPriority>
     }
   }
 
+  public override contains(data: [TElement, TPriority]): boolean {
+    for (const item of this) {
+      if (item[0] === data[0] && item[1] === data[1]) {
+        return true;
+      }
+    }
+    return false;
+  }
+
   public dequeue(): TElement {
     if (this._head === undefined) {
       throw new EmptyQueueException();

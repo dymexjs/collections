@@ -62,4 +62,26 @@ describe("Stack", () => {
     const stack = new Stack();
     assert.strictEqual(stack.tryPeek()[0], false);
   });
+  test("enqueueRange", () => {
+    const stack = new Stack();
+    stack.enqueueRange(arr);
+    assert.strictEqual(stack.size, arr.length);
+  });
+  test("clear", () => {
+    const stack = new Stack(arr);
+    stack.clear();
+    assert.strictEqual(stack.size, 0);
+  });
+  test("dispose", () => {
+    const stack = new Stack(arr);
+    stack[Symbol.dispose]();
+    assert.strictEqual(stack.size, 0);
+  });
+
+  test("contains", () => {
+    const stack = new Stack(arr);
+    for (const item of arr) {
+      assert.strictEqual(stack.contains(item), true);
+    }
+  });
 });

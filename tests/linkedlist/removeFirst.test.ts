@@ -1,6 +1,6 @@
 import { describe, test } from "node:test";
 import * as assert from "node:assert/strict";
-import { LinkedList } from "../../src";
+import { EmptyListException, ILinkedListNode, LinkedList } from "../../src";
 import { arraySize, headItems } from "./common";
 
 describe("remove", () => {
@@ -74,5 +74,15 @@ describe("remove", () => {
       assert.strictEqual(list.size, expectedItems.length);
       assert.deepStrictEqual(Array.from(list), expectedItems);
     }
+  });
+  test("should throw when removing first from empty list", () => {
+    const list = new LinkedList<number>();
+    assert.throws(() => list.removeFirst(), EmptyListException);
+  });
+  test("remove node", () => {
+    const list = new LinkedList<number>([0, 1, 2]);
+    const node = list.find(1) as ILinkedListNode<number>;
+    list.remove(node);
+    assert.strictEqual(list.size, 2);
   });
 });
