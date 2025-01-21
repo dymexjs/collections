@@ -146,6 +146,20 @@ describe("Priority Queue", () => {
       assert.throws(() => queue.peek(), EmptyQueueException);
     });
   });
+  describe("contains", () => {
+    test("contains", () => {
+      const queue = new PriorityQueue();
+      queue.enqueueRange([
+        ["value0", 0],
+        ["value1", 1],
+        ["value2", 2],
+      ]);
+      assert.strictEqual(queue.contains(["value0", 0]), true);
+      assert.strictEqual(queue.contains(["value1", 1]), true);
+      assert.strictEqual(queue.contains(["value2", 2]), true);
+      assert.strictEqual(queue.contains(["value3", 3]), false);
+    });
+  });
   describe("iteration", () => {
     function* nonModifyingOperations(): Generator<[string, CallableFunction, number]> {
       yield ["peek", (queue: IPriorityQueue<number, number>) => queue.peek(), 1];
@@ -197,6 +211,18 @@ describe("Priority Queue", () => {
           assert.throws(() => iterator.next(), CollectionChangedException);
         });
       }
+    });
+  });
+  describe("clear", () => {
+    test("clear", () => {
+      const queue = createSmallPriorityQueue();
+      queue.clear();
+      assert.strictEqual(queue.size, 0);
+    });
+    test("dispose", () => {
+      const queue = createSmallPriorityQueue();
+      queue[Symbol.dispose]();
+      assert.strictEqual(queue.size, 0);
     });
   });
   test("Dijkstra", () => {

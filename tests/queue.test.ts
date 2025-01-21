@@ -62,4 +62,47 @@ describe("Queue", () => {
     const queue = new Queue();
     assert.strictEqual(queue.tryPeek()[0], false);
   });
+  test("clear", () => {
+    const queue = new Queue(arr);
+    queue.clear();
+    assert.strictEqual(queue.size, 0);
+  });
+  test("dispose", () => {
+    const queue = new Queue(arr);
+    queue[Symbol.dispose]();
+    assert.strictEqual(queue.size, 0);
+  });
+  test("enqueueRange", () => {
+    const queue = new Queue();
+    queue.enqueueRange(arr);
+    assert.strictEqual(queue.size, arr.length);
+  });
+  test("dequeueEnqueue", () => {
+    const queue = new Queue();
+    queue.enqueueRange(arr);
+    for (const item of arr) {
+      assert.strictEqual(queue.dequeueEnqueue(item), item);
+    }
+  });
+  test("dequeueEnqueue empty queue", () => {
+    const queue = new Queue();
+    assert.throws(() => queue.dequeueEnqueue("hello"), EmptyQueueException);
+  });
+  test("enqueueDequeue", () => {
+    const queue = new Queue();
+    queue.enqueueRange(arr);
+    for (const item of arr) {
+      assert.strictEqual(queue.enqueueDequeue(item), item);
+    }
+  });
+  test("peek empty queue", () => {
+    const queue = new Queue();
+    assert.throws(() => queue.peek(), EmptyQueueException);
+  });
+  test("contains", () => {
+    const queue = new Queue(arr);
+    for (const item of arr) {
+      assert.strictEqual(queue.contains(item), true);
+    }
+  });
 });
