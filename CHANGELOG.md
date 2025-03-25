@@ -2,6 +2,14 @@
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 0.1.3 - 2025-03-25
+
+### What's Changed 👀
+
+- fix: multiple fixes @n3okill ([#9](https://github.com/$OWNER/$REPOSITORY/pull/9))
+
+**Full Changelog**: https://github.com/dymexjs/collections/compare/0.1.2...v0.1.3
+
 ## 0.1.2 - 2025-01-21
 
 ### What's Changed 👀
