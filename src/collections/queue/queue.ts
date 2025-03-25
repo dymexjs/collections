@@ -1,8 +1,8 @@
 import { EmptyQueueException } from "../../utils/exceptions/EmptyQueueException.ts";
-import { ICollectionNode } from "../base/collection.node.interface.ts";
+import type { ICollectionNode } from "../base/collection.node.interface.ts";
 import { CollectionNode } from "../base/collection.node.ts";
 import { Collection } from "../base/collection.ts";
-import { IQueue } from "./queue.interface.ts";
+import type { IQueue } from "./queue.interface.ts";
 
 export class Queue<T> extends Collection<T> implements IQueue<T> {
   protected _tail?: ICollectionNode<T>;

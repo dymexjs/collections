@@ -1,8 +1,8 @@
 import { Collection } from "../base/collection.ts";
 import { EmptyListException } from "../../utils/exceptions/EmptyListException.ts";
 import { CollectionChangedException } from "../../utils/exceptions/CollectionChangedException.ts";
-import { ILinkedList } from "./linkedlist.interface.ts";
-import { ILinkedListNode } from "./linkedlist.node.interface.ts";
+import type { ILinkedList } from "./linkedlist.interface.ts";
+import type { ILinkedListNode } from "./linkedlist.node.interface.ts";
 import { LinkedListNode } from "./linkedlist.node.ts";
 
 export class LinkedList<T> extends Collection<T> implements ILinkedList<T> {
