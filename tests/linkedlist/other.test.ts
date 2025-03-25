@@ -1,6 +1,6 @@
 import { describe, test } from "node:test";
 import * as assert from "node:assert/strict";
-import { CollectionChangedException, LinkedList } from "../../src";
+import { CollectionChangedException, LinkedList } from "../../src/index.ts";
 
 describe("LinkedList other tests", () => {
   test("create linkedlist from array", () => {

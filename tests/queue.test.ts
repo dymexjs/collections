@@ -1,6 +1,6 @@
 import { describe, test } from "node:test";
 import * as assert from "node:assert/strict";
-import { EmptyQueueException, Queue } from "../src";
+import { EmptyQueueException, Queue } from "../src/index.ts";
 
 describe("Queue", () => {
   const arr = Array.from({ length: 10 }, (_, i) => i);

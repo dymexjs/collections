@@ -3,11 +3,11 @@ import * as assert from "node:assert/strict";
 import {
   CollectionChangedException,
   EmptyQueueException,
-  IComparer,
-  IPriorityQueue,
+  type IComparer,
+  type IPriorityQueue,
   PriorityQueue,
   Queue,
-} from "../src";
+} from "../src/index.ts";
 
 describe("Priority Queue", () => {
   function createSmallPriorityQueue() {
@@ -227,13 +227,19 @@ describe("Priority Queue", () => {
   });
   test("Dijkstra", () => {
     class Edge {
-      constructor(
-        public readonly neighbor: number,
-        public readonly weight: number,
-      ) {}
+      public readonly neighbor: number;
+      public readonly weight: number;
+
+      constructor(neighbor: number, weight: number) {
+        this.neighbor = neighbor;
+        this.weight = weight;
+      }
     }
     class Graph {
-      constructor(public readonly nodes: Array<Array<Edge>>) {}
+      public readonly nodes: Array<Array<Edge>>;
+      constructor(nodes: Array<Array<Edge>>) {
+        this.nodes = nodes;
+      }
     }
 
     function runDijkstra(graph: Graph, startNode: number) {
@@ -287,25 +293,35 @@ describe("Priority Queue", () => {
   });
   test("Complex", () => {
     class Item {
-      constructor(
-        public readonly name: string,
-        public readonly date: Date,
-        public readonly priority: Priority,
-        public readonly workDays: number,
-      ) {}
+      public readonly name: string;
+      public readonly date: Date;
+      public readonly priority: Priority;
+      public readonly workDays: number;
+
+      constructor(name: string, date: Date, priority: Priority, workDays: number) {
+        this.name = name;
+        this.date = date;
+        this.priority = priority;
+        this.workDays = workDays;
+      }
     }
     class WorkItem {
-      constructor(
-        public readonly item: Item,
-        public workDays: number,
-      ) {}
+      public readonly item: Item;
+      public workDays: number;
+      constructor(item: Item, workDays: number) {
+        this.item = item;
+        this.workDays = workDays;
+      }
     }
 
-    enum Priority {
-      Critical,
-      High,
-      Normal,
-    }
+    const Priority = {
+      Critical: "Critical",
+      High: "High",
+      Normal: "Normal",
+    } as const;
+
+    type Priority = keyof typeof Priority;
+
     const data: Array<Item> = [
       new Item("clean code", new Date(2025, 0, 4), Priority.Normal, 5),
       new Item("refactoring", new Date(2025, 0, 5), Priority.High, 3),
@@ -331,11 +347,15 @@ describe("Priority Queue", () => {
     }
 
     class SortOrder {
-      constructor(
-        public readonly priority: Priority,
-        public readonly date: Date,
-        public readonly sequence,
-      ) {}
+      public readonly priority: Priority;
+      public readonly date: Date;
+      public readonly sequence: number;
+
+      constructor(priority: Priority, date: Date, sequence: number) {
+        this.priority = priority;
+        this.date = date;
+        this.sequence = sequence;
+      }
     }
 
     class SortOrderComparer implements IComparer<SortOrder> {
@@ -357,10 +377,12 @@ describe("Priority Queue", () => {
     }
 
     class QueueItem {
-      constructor(
-        public readonly item: WorkItem,
-        public readonly sortOrder: SortOrder,
-      ) {}
+      public readonly item: WorkItem;
+      public readonly sortOrder: SortOrder;
+      constructor(item: WorkItem, sortOrder: SortOrder) {
+        this.item = item;
+        this.sortOrder = sortOrder;
+      }
     }
 
     const dayIterator = workDays();

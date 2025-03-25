@@ -1,6 +1,6 @@
 import { describe, test } from "node:test";
 import * as assert from "node:assert/strict";
-import { EmptyStackException, Stack } from "../src";
+import { EmptyStackException, Stack } from "../src/index.ts";
 
 describe("Stack", () => {
   const arr = Array.from({ length: 10 }, (_, i) => i);

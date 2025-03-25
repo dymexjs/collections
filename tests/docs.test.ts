@@ -1,7 +1,6 @@
 import { describe, test, beforeEach } from "node:test";
 import * as assert from "node:assert/strict";
-import { Stack } from "../src";
-import { EmptyStackException } from "../src";
+import { EmptyStackException, Stack } from "../src/index.ts";
 
 describe("Stack", () => {
   interface Task {

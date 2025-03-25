@@ -1,7 +1,7 @@
 import { describe, test } from "node:test";
 import * as assert from "node:assert/strict";
-import { LinkedList } from "../../src";
-import { arraySize, headItems, headItemsReverse, tailItems } from "./common";
+import { LinkedList } from "../../src/index.ts";
+import { arraySize, headItems, headItemsReverse, tailItems } from "./common.ts";
 
 describe("addLast", () => {
   test("basic", () => {

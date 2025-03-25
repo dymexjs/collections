@@ -1,7 +1,7 @@
 import { describe, test } from "node:test";
 import * as assert from "node:assert/strict";
-import { EmptyListException, LinkedList } from "../../src";
-import { arraySize, headItems } from "./common";
+import { EmptyListException, LinkedList } from "../../src/index.ts";
+import { arraySize, headItems } from "./common.ts";
 
 describe("removeLast", () => {
   test("Call removeLast on a collection with one item in it", () => {
