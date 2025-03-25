@@ -1,4 +1,4 @@
-import { ICollectionNode } from "./collection.node.interface.ts";
+import type { ICollectionNode } from "./collection.node.interface.ts";
 
 export class CollectionNode<T> implements ICollectionNode<T> {
   #_next?: ICollectionNode<T>;

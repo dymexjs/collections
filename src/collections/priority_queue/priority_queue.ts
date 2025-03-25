@@ -1,20 +1,19 @@
-import { Comparer, IComparer } from "../../utils/comparer/comparer.ts";
+import { Comparer, type IComparer } from "../../utils/comparer/comparer.ts";
 import { EmptyQueueException } from "../../utils/exceptions/EmptyQueueException.ts";
-import { ICollectionNode } from "../base/collection.node.interface.ts";
+import type { ICollectionNode } from "../base/collection.node.interface.ts";
 import { CollectionNode } from "../base/collection.node.ts";
 import { Collection } from "../base/collection.ts";
-import { IPriorityQueue } from "./priority_queue.interface.ts";
+import type { IPriorityQueue } from "./priority_queue.interface.ts";
 
 export class PriorityQueue<TElement, TPriority>
   extends Collection<[TElement, TPriority]>
   implements IPriorityQueue<TElement, TPriority>
 {
-  constructor(
-    data: Iterable<[TElement, TPriority]> = [],
-    protected readonly _comparer: IComparer<TPriority> = Comparer.default,
-  ) {
+  protected readonly _comparer: IComparer<TPriority>;
+  constructor(data: Iterable<[TElement, TPriority]> = [], comparer: IComparer<TPriority> = Comparer.default) {
     super();
     this._useVersion = true;
+    this._comparer = comparer;
     if (data) {
       this.enqueueRange(data);
     }

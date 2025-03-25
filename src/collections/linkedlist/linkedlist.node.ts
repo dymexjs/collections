@@ -1,5 +1,5 @@
 import { CollectionNode } from "../base/collection.node.ts";
-import { ILinkedListNode } from "./linkedlist.node.interface.ts";
+import type { ILinkedListNode } from "./linkedlist.node.interface.ts";
 
 export class LinkedListNode<T> extends CollectionNode<T> implements ILinkedListNode<T> {
   #_prev?: LinkedListNode<T>;

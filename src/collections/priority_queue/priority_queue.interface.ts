@@ -1,4 +1,4 @@
-import { ICollection } from "../base/collection.interface.ts";
+import type { ICollection } from "../base/collection.interface.ts";
 
 export interface IPriorityQueue<TElement, TPriority> extends ICollection<[TElement, TPriority]> {
   /**

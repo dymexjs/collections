@@ -1,5 +1,5 @@
-import { ICollection } from "../base/collection.interface.ts";
-import { ILinkedListNode } from "./linkedlist.node.interface.ts";
+import type { ICollection } from "../base/collection.interface.ts";
+import type { ILinkedListNode } from "./linkedlist.node.interface.ts";
 
 export interface ILinkedList<T> extends ICollection<T> {
   /**

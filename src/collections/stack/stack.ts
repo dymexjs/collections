@@ -1,7 +1,7 @@
 import { EmptyStackException } from "../../utils/exceptions/EmptyStackException.ts";
 import { CollectionNode } from "../base/collection.node.ts";
 import { Collection } from "../base/collection.ts";
-import { IStack } from "./stack.interface.ts";
+import type { IStack } from "./stack.interface.ts";
 
 export class Stack<T> extends Collection<T> implements IStack<T> {
   constructor(data?: Iterable<T>) {

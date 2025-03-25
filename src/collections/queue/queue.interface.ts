@@ -1,4 +1,4 @@
-import { ICollection } from "../base/collection.interface.ts";
+import type { ICollection } from "../base/collection.interface.ts";
 
 export interface IQueue<T> extends ICollection<T> {
   /**

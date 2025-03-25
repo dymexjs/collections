@@ -1,6 +1,6 @@
 import { CollectionChangedException } from "../../utils/exceptions/CollectionChangedException.ts";
-import { ICollection } from "./collection.interface.ts";
-import { ICollectionNode } from "./collection.node.interface.ts";
+import type { ICollection } from "./collection.interface.ts";
+import type { ICollectionNode } from "./collection.node.interface.ts";
 
 export abstract class Collection<T> implements ICollection<T> {
   protected _head?: ICollectionNode<T>;

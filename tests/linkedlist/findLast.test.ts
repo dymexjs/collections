@@ -1,7 +1,7 @@
 import { describe, test } from "node:test";
 import * as assert from "node:assert/strict";
-import { LinkedList } from "../../src";
-import { headItems, tailItems } from "./common";
+import { LinkedList } from "../../src/index.ts";
+import { headItems, tailItems } from "./common.ts";
 
 describe("findLast", () => {
   function verifyFind(list: LinkedList<number>, items: Array<number>): void {
